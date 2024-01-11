@@ -1,0 +1,25 @@
+meta {
+  name: DELETE Supplier
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{host}}/api/v1/suppliers/{{supplierIdTest}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Deleted supplier!", function () {
+  //     pm.response.to.have.status(204);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

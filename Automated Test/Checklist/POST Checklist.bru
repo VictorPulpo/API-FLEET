@@ -1,0 +1,82 @@
+meta {
+  name: POST Checklist
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/api/v1/checklists
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+    "name": "TEST API - {{randomNumber}}",
+    "description": "string",
+    "status": "ACTIVE",
+    "sections": [
+      {
+        "name": "Sección 1",
+        "position":1,
+        "status": "ACTIVE",
+        "fields": [
+          {
+            "name": "Campo check",
+            "required": true,
+            "position": 1,
+            "type": "checkbox",
+            "status": "ACTIVE"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+script:pre-request {
+  // const date = new Date();
+  // const year = date.getFullYear()
+  // const month = date.getMonth()
+  // const day = date.getUTCDate()
+  // const hour = date.getHours()-1
+  // const minutes = date.getMinutes()
+  // const seconds = date.getSeconds()
+  // 
+  // 
+  // const dateUTC = new Date(Date.UTC(year, month, day, hour, minutes, 0));
+  // 
+  // const fechaActual = dateUTC.toISOString()
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActual);
+  // 
+  // 
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("checklistId", jsonData.id);
+  // 
+  // pm.test("Checklist Created!", function () {
+  //     pm.response.to.have.status(201);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.id).to.be.an("string");
+  //     pm.expect(jsonData.name).to.be.an("string");
+  //     pm.expect(jsonData.description).to.be.an("string");
+  //     pm.expect(jsonData.status).to.be.an("string");
+  //     pm.expect(jsonData.sections).to.be.an("array");
+  //     
+  // });
+}

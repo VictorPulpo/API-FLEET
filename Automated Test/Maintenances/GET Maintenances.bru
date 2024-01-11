@@ -1,0 +1,79 @@
+meta {
+  name: GET Maintenances
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{host}}/api/v1/maintenances?skip=0&take=20
+  body: none
+  auth: none
+}
+
+query {
+  skip: 0
+  take: 20
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Maintenances!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.maintenances).to.be.an("array");
+  //     pm.expect(jsonData.maintenances[0].id).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].name).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].type).to.be.an("object");
+  //     pm.expect(jsonData.maintenances[0].tax).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].discount).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].total).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].totalWorkforce).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].createdAt).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].updatedAt).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].tags).to.be.an("array");
+  //     pm.expect(jsonData.maintenances[0].maintenanceCost).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].identifier).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].vehicle).to.be.an("object");
+  //     pm.expect(jsonData.maintenances[0].createdUser).to.be.an("object");
+  //     pm.expect(jsonData.maintenances[0].tasks).to.be.an("array");
+  //     //pm.expect(jsonData.maintenances[0].updatedUser).to.be.an("object");
+  //     pm.expect(jsonData.maintenances[0].createdByUser).to.be.an("object");
+  //     //pm.expect(jsonData.maintenances[0].updatedByUser).to.be.an("object");
+  //     //pm.expect(jsonData.maintenances[0].responsible).to.be.an("null");
+  //     pm.expect(jsonData.maintenances[0].state).to.be.an("object");
+  //     pm.expect(jsonData.maintenances[0].taxType).to.be.an("null");
+  //     pm.expect(jsonData.maintenances[0].allowedRoles).to.be.an("array");
+  //     pm.expect(jsonData.maintenances[0].status).to.be.an("string");
+  //     //pm.expect(jsonData.maintenances[0].scheduledByKm).to.be.an("string");
+  //     //pm.expect(jsonData.maintenances[0].scheduledByDate).to.be.an("null");
+  //     pm.expect(jsonData.maintenances[0].segments).to.be.an("array");
+  //     pm.expect(jsonData.maintenances[0].stateUpdated).to.be.an("boolean");
+  //     //pm.expect(jsonData.maintenances[0].remainingDistance).to.be.an("number");
+  //     //pm.expect(jsonData.maintenances[0].remainingDays).to.be.an("null");
+  //     pm.expect(jsonData.maintenances[0].distanceNotificationOverdue).to.be.an("boolean");
+  //     pm.expect(jsonData.maintenances[0].timeNotificationOverdue).to.be.an("boolean");
+  //    // pm.expect(jsonData.maintenances[0].supplier).to.be.an("object");
+  //     pm.expect(jsonData.maintenances[0].lastStatusDate).to.be.an("number");
+  //     //pm.expect(jsonData.maintenances[0].endDate).to.be.an("string");
+  //     //pm.expect(jsonData.maintenances[0].startDate).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].maintenanceComments).to.be.an("array");
+  //     pm.expect(jsonData.maintenances[0].maintenanceDocuments).to.be.an("array");
+  //     //pm.expect(jsonData.maintenances[0].odometerRecord).to.be.an("number");
+  //     pm.expect(jsonData.maintenances[0].registrationNumber).to.be.an("string");
+  //     //pm.expect(jsonData.maintenances[0].reference).to.be.an("string");
+  //     //pm.expect(jsonData.maintenances[0].estimatedDeliveryDate).to.be.an("string");
+  //     pm.expect(jsonData.maintenances[0].associatedDrivers).to.be.an("array");
+  //    // pm.expect(jsonData.maintenances[0].daysSinceStart).to.be.an("number");
+  // 
+  // });
+}

@@ -1,0 +1,71 @@
+meta {
+  name: GET Vehicle Detail
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{host}}/api/v1/vehicles/{{vehicleIdTest}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // 
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // const jsonData = pm.response.json();
+  // console.log(jsonData.fuelType.name)
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData.id).to.be.an("number");
+  //   pm.expect(jsonData.createAt).to.be.a("string");
+  //   pm.expect(jsonData.updateAt).to.be.a("string");
+  //   pm.expect(jsonData.archivedAt).to.be.a("null");
+  //   pm.expect(jsonData.name).to.be.a("string");
+  //   pm.expect(jsonData.circulationPermit).to.be.a("string");
+  //   pm.expect(jsonData.model).to.be.a("string");
+  //   pm.expect(jsonData.year).to.be.a("string");
+  //   pm.expect(jsonData.color).to.be.a("string");
+  //   pm.expect(jsonData.city).to.be.a("string");
+  //   pm.expect(jsonData.primaryTankCapacity).to.be.a("number");
+  //   pm.expect(jsonData.deleted).to.be.an("boolean");
+  //   pm.expect(jsonData.customFieldsData).to.be.an("object");
+  //   pm.expect(jsonData.archived).to.be.an("boolean");
+  //   pm.expect(jsonData.documents).to.be.an("array");
+  //   pm.expect(jsonData.artifactAssignedIds).to.be.an("array");
+  //   pm.expect(jsonData.tags).to.be.an("array");
+  //   pm.expect(jsonData.imageUrl).to.be.a("null");
+  //   pm.expect(jsonData.imageMinUrl).to.be.a("null");
+  //   pm.expect(jsonData.vehicleTanks).to.be.a("null");
+  //   pm.expect(jsonData.tanksCapacity).to.be.a("null");
+  //   pm.expect(jsonData.latitude).to.be.a("null");
+  //   pm.expect(jsonData.longitude).to.be.null;
+  //   pm.expect(jsonData.locationDatetime).to.be.a("null");
+  //   pm.expect(jsonData.locationOrigin).to.be.a("null");
+  //   pm.expect(jsonData.locationOriginId).to.be.a("null");
+  //   pm.expect(jsonData.createdByUser).to.be.a("object");
+  //   pm.expect(jsonData.updatedByUser).to.be.a("object");
+  //   pm.expect(jsonData.truck).to.be.a("object");
+  //   pm.expect(jsonData.segments).to.be.a("array");
+  //   pm.expect(jsonData.vehicleType).to.be.a("object");
+  //   pm.expect(jsonData.propertyType).to.be.a("object");
+  //   pm.expect(jsonData.fuelType).to.be.a("object");
+  //   pm.expect(jsonData.brand).to.be.a("object");
+  //   pm.expect(jsonData.lastStatusChangeDate).to.be.a("null");
+  //   
+  // });
+  // 
+  // 
+  // 
+}

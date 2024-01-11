@@ -1,0 +1,25 @@
+meta {
+  name: DELETE Maintenance
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{host}}/api/v1/maintenances/{{maintenanceId}}
+  body: none
+  auth: none
+}
+
+query {
+  ~: null
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Deleted Maintenance!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+}

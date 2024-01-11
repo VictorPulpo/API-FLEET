@@ -1,0 +1,25 @@
+meta {
+  name: DELETE Payment Method
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{host}}/api/v1/payment-methods/{{paymentMethodIdTest}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Deleted!", function () {
+  //     pm.response.to.have.status(204);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

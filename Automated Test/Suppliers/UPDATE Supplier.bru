@@ -1,0 +1,48 @@
+meta {
+  name: UPDATE Supplier
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{host}}/api/v1/suppliers/{{supplierIdTest}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+  "address": "Automation",
+  "city": "Postman",
+  "commercialEmail": "pstm.automation{{randomNumber}}@apitest.com",
+  "commercialName":"{{$randomCompanyName}}",
+  "country": "México",
+  "fiscalAddress": "Automation Postman {{randomNumber}}",
+  "fiscalCode": "{{$randomBankAccountBic}}",
+  "latitude": 19.7027116,
+  "longitude": -101.1923818,
+  "name": "{{$randomCompanyName}}",
+  "parentSupplierId": null,
+  "phoneNumber": "9531239440",
+  "segments": [],
+  "state": "Michoacán",
+  "supplierTypeId": {{supplierTypeId}},
+  "tags": [{"id": "7a5cd690-2ce7-434d-8809-82eaf6ea5f7c", "tag": "Etiqueta", "module": "suppliers"}],
+  "webPage": "{{$randomDomainName}}",
+  "zipCode": "58000"
+  }
+}
+
+tests {
+  // pm.test("Updated supplier!", function () {
+  //     pm.response.to.have.status(204);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

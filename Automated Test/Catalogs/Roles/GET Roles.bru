@@ -1,0 +1,37 @@
+meta {
+  name: GET Roles
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/management/roles/catalog
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Roles!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("roleId", jsonData[0]["id"]);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData[0].id).to.be.an("number");
+  //   pm.expect(jsonData[0].createdAt).to.be.a("string");
+  //   pm.expect(jsonData[0].updatedAt).to.be.a("null");
+  //   pm.expect(jsonData[0].name).to.be.a("string");
+  //    pm.expect(jsonData[0].description).to.be.a("null");
+  //   
+  // });
+}

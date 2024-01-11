@@ -1,0 +1,39 @@
+meta {
+  name: GET Payment Methods Assigments
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{host}}/api/v1/assignments/payment-methods/{{paymentMethodId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Payment Methods Assignments!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.assignments[0].type).to.be.an("string");
+  //     pm.expect(jsonData.assignments[0].user).to.be.an("object");
+  //     pm.expect(jsonData.assignments[0].id).to.be.an("number");
+  //     pm.expect(jsonData.assignments[0].createAt).to.be.an("string");
+  //     pm.expect(jsonData.assignments[0].updateAt).to.be.an("string");
+  //     pm.expect(jsonData.assignments[0].startDate).to.be.an("string");
+  //     pm.expect(jsonData.assignments[0].endDate).to.be.an("string");
+  //     pm.expect(jsonData.assignments[0].isActive).to.be.an("boolean");
+  // 
+  //   });
+}

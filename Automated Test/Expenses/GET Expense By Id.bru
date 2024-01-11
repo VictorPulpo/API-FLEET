@@ -1,0 +1,64 @@
+meta {
+  name: GET Expense By Id
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{host}}/api/v1/expenses/{{expenseId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get expense by id!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.id).to.be.an("number");
+  //     pm.expect(jsonData.createAt).to.be.an("string");
+  //     pm.expect(jsonData.updateAt).to.be.an("string");
+  //     pm.expect(jsonData.date).to.be.an("string");
+  //     pm.expect(jsonData.name).to.be.an("string");
+  //     pm.expect(jsonData.taxType).to.be.an("string");
+  //     pm.expect(jsonData.discountType).to.be.an("string");
+  //     pm.expect(jsonData.documents).to.be.an("array");
+  //     pm.expect(jsonData.comments).to.be.an("array");
+  //     pm.expect(jsonData.scheduledCreationOrder).to.be.an("number");
+  //     pm.expect(jsonData.customFieldsMetadata).to.be.an("object");
+  //     pm.expect(jsonData.odometerId).to.be.an("null");
+  //     pm.expect(jsonData.tags).to.be.an("array");
+  //     pm.expect(jsonData.origin).to.be.an("string");
+  //     pm.expect(jsonData.country).to.be.an("null");
+  //     pm.expect(jsonData.user).to.be.an("object");
+  //     pm.expect(jsonData.vehicle).to.be.an("object");
+  //     pm.expect(jsonData.paymentMethod).to.be.an("object");
+  //     pm.expect(jsonData.supplier).to.be.an("object");
+  //     pm.expect(jsonData.location).to.be.an("null");
+  //     pm.expect(jsonData.scheduledExpense).to.be.an("null");
+  //     pm.expect(jsonData.keyMovement).to.be.an("null");
+  //     pm.expect(jsonData.subtotal).to.be.an("number");
+  //     pm.expect(jsonData.tax).to.be.an("number");
+  //     pm.expect(jsonData.calculatedTax).to.be.an("number");
+  //     pm.expect(jsonData.discount).to.be.an("number");
+  //     pm.expect(jsonData.calculatedDiscount).to.be.an("number");
+  //     pm.expect(jsonData.total).to.be.an("number");
+  //     pm.expect(jsonData.createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.segments).to.be.an("array");
+  //     pm.expect(jsonData.expenseType).to.be.an("object");
+  //     pm.expect(jsonData.dateISO).to.be.an("string");
+  //     pm.expect(jsonData.currentCurrency).to.be.an("string");    
+  //     
+  // });
+}

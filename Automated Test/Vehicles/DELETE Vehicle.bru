@@ -1,0 +1,25 @@
+meta {
+  name: DELETE Vehicle
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{host}}/api/v1/vehicles/{{vehicleIdTest}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Deleted!", function () {
+  //     pm.response.to.have.status(204);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

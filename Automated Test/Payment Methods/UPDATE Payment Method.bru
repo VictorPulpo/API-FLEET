@@ -1,0 +1,43 @@
+meta {
+  name: UPDATE Payment Method
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{host}}/api/v1/payment-methods/{{paymentMethodIdTest}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+      "name": "Automation Postman {{$randomCurrencyCode}}{{randomNumber}}",
+      "slug": "{{$randomUUID}}{{randomNumber}}",
+      "supplier": "Visa",
+      "segments": [3238, 5509],
+      "paymentMethodsStatus": {{paymentMethodStatus}},
+      "paymentMethodsType": {{paymentMethodTypes}}
+  }
+      
+  
+}
+
+script:pre-request {
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Payment method updated!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

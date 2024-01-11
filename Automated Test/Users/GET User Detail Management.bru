@@ -1,0 +1,48 @@
+meta {
+  name: GET User Detail Management
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{host}}/management/users/{{userIdManagement}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get User Management!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.id).to.be.an("number");
+  //     pm.expect(jsonData.name).to.be.a("string");
+  //     pm.expect(jsonData.email).to.be.a("string");
+  //     pm.expect(jsonData.timezone).to.be.a("object");
+  //     pm.expect(jsonData.licenseNumber).to.be.a("string");
+  //     pm.expect(jsonData.isPermanentLicense).to.be.a("boolean");
+  //     pm.expect(jsonData.licenseType).to.be.an("string");
+  //     pm.expect(jsonData.userTypeId).to.be.an("number");
+  //     pm.expect(jsonData.userStatusId).to.be.a("number");
+  //     pm.expect(jsonData.segments).to.be.a("array");
+  //     pm.expect(jsonData.services).to.be.a("array");
+  //     pm.expect(jsonData.services[0].id).to.be.an("number");
+  //     pm.expect(jsonData.services[0].name).to.be.an("string");
+  //     pm.expect(jsonData.services[0].description).to.be.an("string");
+  //     pm.expect(jsonData.services[0].role).to.be.an("object");
+  //     pm.expect(jsonData.thousandSeparator).to.be.a("string");
+  //     pm.expect(jsonData.decimalSeparator).to.be.a("string");
+  //     pm.expect(jsonData.language).to.be.a("null");
+  // 
+  //   });
+}

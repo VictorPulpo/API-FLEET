@@ -1,0 +1,36 @@
+meta {
+  name: GET Vehicle Status
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}/api/v1/vehicles/status
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("vehicleStatusId", jsonData[0]["id"]);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("body is correct", () => {
+  //     var jsonData = pm.response.json();
+  //     pm.expect(jsonData[3].id).to.be.an("number");
+  //     pm.expect(jsonData[3].name).to.be.an("string");
+  // 
+  // });
+  // 
+}

@@ -1,0 +1,25 @@
+meta {
+  name: DELETE Fuel
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{host}}/api/v1/fuels/{{fuelId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Successful Delete fuel", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([201, 202, 204]);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

@@ -1,0 +1,15 @@
+meta {
+  name: DELETE User Management
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{host}}/management/users/{{userIdManagement}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}

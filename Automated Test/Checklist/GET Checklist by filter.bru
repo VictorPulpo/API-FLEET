@@ -1,0 +1,46 @@
+meta {
+  name: GET Checklist by filter
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{host}}/api/v1/checklists/answer?skip=0&take=20
+  body: none
+  auth: none
+}
+
+query {
+  skip: 0
+  take: 20
+  ~q: {"AND":[{"parent":"segments","entity":"VEHICLES","relative":"VEHICLES","segments":{"segments":[12,15,17,18,20,21,57,465,466,467,468,470,471,472,473,474,475,476,482,483,484,485,487,489,490,491,492,493,494]}}]}
+  
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get checlist with filter!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     //pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.answers).to.be.an("array");
+  //     pm.expect(jsonData.answers[0].id).to.be.an("string");
+  //     pm.expect(jsonData.answers[0].comments).to.be.an("null");
+  //     pm.expect(jsonData.answers[0].tags).to.be.an("array");
+  //     pm.expect(jsonData.answers[0].checklist).to.be.an("object");
+  //     pm.expect(jsonData.answers[0].segments).to.be.an("array");
+  //     pm.expect(jsonData.answers[0].vehicle).to.be.an("object");
+  //     pm.expect(jsonData.answers[0].user).to.be.an("object");
+  // 
+  // });
+  // 
+}

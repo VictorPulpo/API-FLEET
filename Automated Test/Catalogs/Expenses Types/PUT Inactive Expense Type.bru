@@ -1,0 +1,41 @@
+meta {
+  name: PUT Inactive Expense Type
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{host}}/api/v1/catalogs/expenses-types/{{expenseTypeId}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+   "description": "API Automation {{randomNumber}}",
+  "languageEng": "API Automation {{randomNumber}}",
+  "languageEs": "API Automation {{randomNumber}}",
+  "languageEsEs": "API Automation {{randomNumber}}",
+  "isActive": false,
+  "name": "API Automation {{randomNumber}}"
+  }
+}
+
+script:pre-request {
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Inactive Expense type!", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([200, 202]);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

@@ -1,0 +1,25 @@
+meta {
+  name: POST Create Assigments Payment Methods
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{host}}/api/v1/assignments/payment-methods/{{paymentMethodId}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+      "vehicleId": {{vehicleId}},
+      "userId": {{userId}},
+       "startDate": "2023-01-12 19:00:00",
+      "endDate": "2023-12-12 19:00:00",
+      "odometer": 0
+  }
+}

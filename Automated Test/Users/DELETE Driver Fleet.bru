@@ -1,0 +1,29 @@
+meta {
+  name: DELETE Driver Fleet
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{host}}/api/v1/users/{{userId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // postman.setEnvironmentVariable("userIdManagement", 0);
+  // postman.setEnvironmentVariable("userId", 0);
+  // 
+}

@@ -1,0 +1,33 @@
+meta {
+  name: GET Odometer Summary
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{host}}/api/v1/odometers/summary?vehicleId={{vehicleId}}
+  body: none
+  auth: none
+}
+
+query {
+  vehicleId: {{vehicleId}}
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+script:pre-request {
+  // 
+  // 
+  // 
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // 
+}

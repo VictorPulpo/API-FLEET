@@ -1,0 +1,82 @@
+meta {
+  name: GET All vehicles
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/api/v1/vehicles
+  body: none
+  auth: none
+}
+
+query {
+  ~take: 20
+  ~skip: 0
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("vehicleId", jsonData.vehicles[0]["id"]);
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData.vehicles[0].id).to.be.an("number");
+  //   pm.expect(jsonData.vehicles[0].createAt).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].updateAt).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].archivedAt).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].name).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].circulationPermit).to.be.a("string");
+  //  // pm.expect(jsonData.vehicles[0].model).to.be.a("string");
+  //  // pm.expect(jsonData.vehicles[0].color).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].city).to.be.a("string");
+  // //  pm.expect(jsonData.vehicles[0].primaryTankCapacity).to.be.a("number");
+  //   pm.expect(jsonData.vehicles[0].artifactAssignedIds).to.be.a("array");
+  //   pm.expect(jsonData.vehicles[0].tags).to.be.a("array");
+  //   pm.expect(jsonData.vehicles[0].imageUrl).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].imageMinUrl).to.be.a("null");
+  //  // pm.expect(jsonData.vehicles[0].vehicleTanks).to.be.a("number"); 
+  //   pm.expect(jsonData.vehicles[0].registrationNumber).to.be.a("string");
+  //  // pm.expect(jsonData.vehicles[0].serialNumber).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].latitude).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].longitude).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].locationDatetime).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].locationOrigin).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].locationOriginId).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].truck).to.be.a("object");
+  //   pm.expect(jsonData.vehicles[0].odometerKm).to.be.a("number");
+  //   pm.expect(jsonData.vehicles[0].odometerMi).to.be.a("number");
+  //   pm.expect(jsonData.vehicles[0].odometerHrs).to.be.a("null");
+  //  // pm.expect(jsonData.vehicles[0].odometerOrigin).to.be.a("string");
+  //  // pm.expect(jsonData.vehicles[0].odometerDate).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].status).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].statusId).to.be.a("number");
+  //   pm.expect(jsonData.vehicles[0].type).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].property).to.be.a("string");
+  //   pm.expect(jsonData.vehicles[0].fuel).to.be.a("string");
+  //  // pm.expect(jsonData.vehicles[0].brand).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].documents).to.be.a("number");
+  //   pm.expect(jsonData.vehicles[0].createdByUser).to.be.a("object");
+  //   pm.expect(jsonData.vehicles[0].updatedByUser).to.be.a("object");
+  //   pm.expect(jsonData.vehicles[0].assignedDrivers).to.be.a("array");
+  //   pm.expect(jsonData.vehicles[0].assignedVehicles).to.be.a("array");
+  //   pm.expect(jsonData.vehicles[0].assignedPaymentMethods).to.be.a("array");
+  //   pm.expect(jsonData.vehicles[0].segments).to.be.a("array");
+  //   pm.expect(jsonData.vehicles[0].archived).to.be.a("boolean");
+  //   //pm.expect(jsonData.vehicles[0].age).to.be.a("null");
+  //   pm.expect(jsonData.vehicles[0].year).to.be.a("string");
+  // 
+  // });
+  // 
+}

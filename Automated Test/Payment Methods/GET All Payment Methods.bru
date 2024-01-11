@@ -1,0 +1,68 @@
+meta {
+  name: GET All Payment Methods
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/api/v1/payment-methods/
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get all payment methods!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("paymentMethodId", jsonData.paymentMethods[1].paymentMethod_id);
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.paymentMethods).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.paymentMethods[0].updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.paymentMethods[0].createAt).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].updateAt).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_id).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_name).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_slug).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_supplier).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_deleted).to.be.an("boolean");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_documents).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_segments).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_archived_at).to.be.an("null");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_archived).to.be.an("boolean");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_legacy_card_id).to.be.an("null");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_origin).to.be.an("null");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_account_id).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_created_by_user_id).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethod_updated_by_user_id).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethods[0].id).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethods[0].name).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].slug).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].documents).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].supplier).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].archived).to.be.an("boolean");
+  //     pm.expect(jsonData.paymentMethods[0].paymentmethodstypeid).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethods[0].paymentmethodsstatusid).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethodsStatus).to.be.an("string");
+  //     pm.expect(jsonData.paymentMethods[0].paymentmethodstype).to.be.an("string");
+  //      pm.expect(jsonData.paymentMethods[0].segments).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethodComments).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].paymentMethodDocuments).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].assignedDrivers).to.be.an("array");
+  //     pm.expect(jsonData.paymentMethods[0].assignedVehicles).to.be.an("array");
+  // 
+  //   });
+  // 
+  // 
+}

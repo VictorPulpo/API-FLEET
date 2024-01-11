@@ -1,0 +1,34 @@
+meta {
+  name: GET Maintenances Status Flow
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/api/v1/maintenance-status-flow
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Status Flow!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("maintenanceStatusId", jsonData.jsonData[0].status[0].id);
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData[0].id).to.be.an("number");
+  //     pm.expect(jsonData[0].name).to.be.an("string");
+  //     pm.expect(jsonData[0].description).to.be.an("string");
+  //     pm.expect(jsonData[0].isDeleted).to.be.an("boolean");
+  //     pm.expect(jsonData[0].createdAt).to.be.an("string");
+  //     pm.expect(jsonData[0].updatedAt).to.be.an("string");
+  //     pm.expect(jsonData[0].status).to.be.an("array");
+  // });
+}

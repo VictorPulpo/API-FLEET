@@ -1,0 +1,65 @@
+meta {
+  name: GET All Users Fleet
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}/api/v1/users?skip=0&take=20
+  body: none
+  auth: none
+}
+
+query {
+  skip: 0
+  take: 20
+  ~ignoreLimits: 0
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get All Users Fleet!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     //pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("userId", jsonData.list[0].id);
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData.list[0].id).to.be.an("number");
+  //   pm.expect(jsonData.list[0].name).to.be.a("string");
+  //   pm.expect(jsonData.list[0].email).to.be.a("string");
+  //   pm.expect(jsonData.list[0].legacyUserId).to.be.a("number");
+  //   pm.expect(jsonData.list[0].userType).to.be.an("number");
+  //   pm.expect(jsonData.list[0].isActive).to.be.a("boolean");
+  //   pm.expect(jsonData.list[0].licenseNumber).to.be.a("string");
+  //   pm.expect(jsonData.list[0].permanentLicense).to.be.a("boolean");
+  //   pm.expect(jsonData.list[0].vehicleType).to.be.a("number");
+  //   pm.expect(jsonData.list[0].documents).to.be.a("number");
+  //   pm.expect(jsonData.list[0].tags).to.be.a("array");
+  //   pm.expect(jsonData.list[0].archived).to.be.an("boolean");
+  //   pm.expect(jsonData.list[0].createAt).to.be.a("string");
+  //   pm.expect(jsonData.list[0].updateAt).to.be.a("string");
+  //   //pm.expect(jsonData.list[0].createdByUser).to.be.a("null");
+  //   //pm.expect(jsonData.list[0].updatedByUser).to.be.a("object");
+  //   pm.expect(jsonData.list[0].userStatus).to.be.a("number");
+  //   pm.expect(jsonData.list[0].statusName).to.be.a("string");
+  // //pm.expect(jsonData.list[0].licenseExpiration).to.be.a("string");
+  //   pm.expect(jsonData.list[0].vehicleTypeName).to.be.a("string");
+  //   pm.expect(jsonData.list[0].licenseTypeName).to.be.a("string");
+  //   pm.expect(jsonData.list[0].segments).to.be.a("array");
+  //   pm.expect(jsonData.list[0].userComments).to.be.a("array");
+  //   pm.expect(jsonData.list[0].userDocuments).to.be.a("array");
+  //   pm.expect(jsonData.list[0].assignedDrivers).to.be.a("array");
+  //   pm.expect(jsonData.list[0].assignedVehicles).to.be.a("array");
+  //   pm.expect(jsonData.list[0].assignedPaymentMethods).to.be.a("array");
+  // 
+  //   });
+}

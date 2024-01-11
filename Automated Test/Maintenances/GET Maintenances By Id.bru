@@ -1,0 +1,50 @@
+meta {
+  name: GET Maintenances By Id
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{host}}/api/v1/maintenances/{{maintenanceId}}
+  body: none
+  auth: none
+}
+
+query {
+  ~: null
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Maintenance By Id!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.identifier).to.be.an("string");
+  //     pm.expect(jsonData.id).to.be.an("string");
+  //     pm.expect(jsonData.status).to.be.an("string");
+  //     pm.expect(jsonData.type).to.be.an("string");
+  //     pm.expect(jsonData.name).to.be.an("string");
+  //     pm.expect(jsonData.vehicle).to.be.an("object");
+  //     pm.expect(jsonData.vehicle.id).to.be.an("number");
+  //     pm.expect(jsonData.vehicle.name).to.be.an("string");
+  //     pm.expect(jsonData.tasks).to.be.an("array");
+  //     pm.expect(jsonData.tax).to.be.an("number");
+  //     pm.expect(jsonData.scheduledDate).to.be.an("string");
+  //    // pm.expect(jsonData.scheduledKm).to.be.an("null");
+  //     pm.expect(jsonData.discount).to.be.an("number");
+  //     pm.expect(jsonData.totalWorkforce).to.be.an("string");
+  //     pm.expect(jsonData.identifier).to.be.an("string");
+  //     pm.expect(jsonData.identifier).to.be.an("string");
+  //     pm.expect(jsonData.identifier).to.be.an("string");
+  //     pm.expect(jsonData.identifier).to.be.an("string");
+  //     pm.expect(jsonData.identifier).to.be.an("string");
+  // 
+  // 
+  // });
+}

@@ -1,0 +1,68 @@
+meta {
+  name: POST Payment Method
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/api/v1/payment-methods/
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+  "name" : "Automation Postman {{$randomCurrencyCode}}{{randomNumber}}",
+  "paymentMethodsStatus": {{paymentMethodStatus}},
+  "paymentMethodsType": {{paymentMethodTypes}},
+  "segments": [3238, 5509],
+  "slug":"{{$randomUUID}}{{randomNumber}}",
+  "supplier":"API AUTOMATION"
+  }
+}
+
+script:pre-request {
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Created payment method!", function () {
+  //     pm.response.to.have.status(201);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("paymentMethodIdTest", jsonData.id);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.name).to.be.an("string");
+  //     pm.expect(jsonData.slug).to.be.a("string");
+  //     pm.expect(jsonData.supplier).to.be.a("string");
+  //     pm.expect(jsonData.segments).to.be.a("array");
+  //     pm.expect(jsonData.paymentMethodsType).to.be.a("object");
+  //     pm.expect(jsonData.paymentMethodsStatus).to.be.an("object");
+  //     pm.expect(jsonData.account).to.be.a("object");
+  //     pm.expect(jsonData.createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.updatedByUser).to.be.a("object");
+  //     pm.expect(jsonData.archivedAt).to.be.a("null");
+  //     pm.expect(jsonData.customFieldsData).to.be.a("null");
+  //     pm.expect(jsonData.legacyCardId).to.be.an("null");
+  //     pm.expect(jsonData.origin).to.be.an("null");
+  //     pm.expect(jsonData.id).to.be.an("number");
+  //     pm.expect(jsonData.createAt).to.be.an("string");
+  //     pm.expect(jsonData.updateAt).to.be.a("string");
+  //     pm.expect(jsonData.deleted).to.be.a("boolean");
+  //     pm.expect(jsonData.documents).to.be.a("array");
+  //     pm.expect(jsonData.archived).to.be.a("boolean");
+  // 
+  //   });
+  // 
+}

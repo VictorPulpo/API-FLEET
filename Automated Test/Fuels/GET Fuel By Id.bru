@@ -1,0 +1,63 @@
+meta {
+  name: GET Fuel By Id
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{host}}/api/v1/fuels/{{fuelId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.id).to.be.an("string");
+  //     pm.expect(jsonData.createAt).to.be.an("string");
+  //     pm.expect(jsonData.updateAt).to.be.an("string");
+  //     pm.expect(jsonData.pricePerUnit).to.be.an("number");
+  //     pm.expect(jsonData.hasTankInconsistency).to.be.an("boolean");
+  //     pm.expect(jsonData.reference).to.be.an("string");
+  //     pm.expect(jsonData.documents).to.be.an("array");
+  //     pm.expect(jsonData.segments).to.be.an("array");
+  //     pm.expect(jsonData.driver).to.be.an("object");
+  //     pm.expect(jsonData.supplier).to.be.an("object");
+  //     pm.expect(jsonData.location).to.be.an("null");
+  //     pm.expect(jsonData.paymentMethod).to.be.an("object");
+  //     pm.expect(jsonData.createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.vehicle).to.be.an("object");
+  //     pm.expect(jsonData.date).to.be.an("string");
+  //     pm.expect(jsonData.fuelType).to.be.an("object");
+  //     pm.expect(jsonData.volume).to.be.an("number");
+  //     pm.expect(jsonData.taxType).to.be.an("string");
+  //     pm.expect(jsonData.tax).to.be.an("number");
+  //     pm.expect(jsonData.calculatedTax).to.be.an("number");
+  //     pm.expect(jsonData.discountType).to.be.an("string");
+  //     pm.expect(jsonData.discount).to.be.an("number");
+  //     pm.expect(jsonData.calculatedDiscount).to.be.an("number");
+  //     pm.expect(jsonData.subtotal).to.be.an("number");
+  //     pm.expect(jsonData.total).to.be.an("number");
+  //     pm.expect(jsonData.currentCurrency).to.be.an("string");
+  //     //pm.expect(jsonData.odometer).to.be.an("number");
+  //     pm.expect(jsonData.vehicleId).to.be.an("number");
+  //     pm.expect(jsonData.tankPercentage).to.be.an("string");
+  //     //pm.expect(jsonData.tags).to.be.an("array");
+  //     pm.expect(jsonData.registrationDateISO).to.be.an("string");
+  //     pm.expect(jsonData.customFieldsMetadata).to.be.an("object");
+  // 
+  // });
+}

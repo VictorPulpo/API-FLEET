@@ -1,0 +1,98 @@
+meta {
+  name: GET All Fuels
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/api/v1/fuels
+  body: none
+  auth: none
+}
+
+query {
+  ~searchText: 
+  ~take: 10
+  ~orderBy: odometer
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+script:pre-request {
+  // const date = new Date();
+  // const year = date.getFullYear()
+  // const month = date.getMonth()
+  // const day = date.getUTCDate()
+  // const hour = date.getHours()-1
+  // const minutes = date.getMinutes()
+  // const seconds = date.getSeconds()
+  // 
+  // 
+  // const dateUTC = new Date(Date.UTC(year, month, day, hour, minutes, 0));
+  // 
+  // const fechaActual = dateUTC.toISOString()
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActual);
+}
+
+tests {
+  // 
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("response should be okay to process", function () {
+  //     pm.response.to.not.be.error;
+  //     pm.response.to.have.jsonBody("fuels");
+  //     pm.response.to.not.have.jsonBody("error");
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     //pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("fuelId", jsonData["fuels"][0]["id"]);
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.fuels).to.be.an("array");
+  //     pm.expect(jsonData.fuels[0].id).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].createAt).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].updateAt).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].pricePerUnit).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].hasTankInconsistency).to.be.an("boolean");
+  //     pm.expect(jsonData.fuels[0].reference).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].documents).to.be.an("array");
+  //     pm.expect(jsonData.fuels[0].segments).to.be.an("array");
+  //     pm.expect(jsonData.fuels[0].driver).to.be.an("object");
+  //     pm.expect(jsonData.fuels[0].supplier).to.be.an("object");
+  //     pm.expect(jsonData.fuels[0].location).to.be.an("null");
+  //     pm.expect(jsonData.fuels[0].createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.fuels[0].updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.fuels[0].vehicle).to.be.an("object");
+  //     pm.expect(jsonData.fuels[0].date).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].fuelType).to.be.an("object");
+  //     pm.expect(jsonData.fuels[0].volume).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].taxType).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].tax).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].calculatedTax).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].discountType).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].discount).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].calculatedDiscount).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].subtotal).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].total).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].currentCurrency).to.be.an("string");
+  //     //pm.expect(jsonData.fuels[0].odometer).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].vehicleId).to.be.an("number");
+  //     pm.expect(jsonData.fuels[0].tankPercentage).to.be.an("string");
+  //     pm.expect(jsonData.fuels[0].tags).to.be.an("null");
+  //     pm.expect(jsonData.fuels[0].fuelComments).to.be.an("array");
+  //     pm.expect(jsonData.fuels[0].fuelDocuments).to.be.an("array");
+  //     pm.expect(jsonData.fuels[0].registrationDateISO).to.be.an("string");
+  // 
+  //   });
+  // 
+  // 
+}

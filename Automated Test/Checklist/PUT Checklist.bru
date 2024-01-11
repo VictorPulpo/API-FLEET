@@ -1,0 +1,70 @@
+meta {
+  name: PUT Checklist
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{host}}/api/v1/checklists/{{checklistId}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+    "name": "TEST API - {{randomNumber}}",
+    "description": "string",
+    "status": "ACTIVE",
+    "sections": [
+      {
+        "name": "Sección 1",
+        "position":1,
+        "status": "ACTIVE",
+        "fields": [
+          {
+            "name": "Campo check",
+            "required": true,
+            "position": 1,
+            "type": "checkbox",
+            "status": "ACTIVE"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+script:pre-request {
+  // const date = new Date();
+  // const year = date.getFullYear()
+  // const month = date.getMonth()
+  // const day = date.getUTCDate()
+  // const hour = date.getHours()-1
+  // const minutes = date.getMinutes()
+  // const seconds = date.getSeconds()
+  // 
+  // 
+  // const dateUTC = new Date(Date.UTC(year, month, day, hour, minutes, 0));
+  // 
+  // const fechaActual = dateUTC.toISOString()
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActual);
+  // 
+  // 
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Checklist updated!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

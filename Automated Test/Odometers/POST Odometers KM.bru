@@ -1,0 +1,80 @@
+meta {
+  name: POST Odometers KM
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/api/v1/odometers
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+    "vehicleId": {{vehicleId}},
+    "origin": "WEB",
+    "registrationDate": "{{fechaActual}}",
+    "km": "23",
+    "hrs": "23"
+  }
+}
+
+script:pre-request {
+  // 
+  // const fechaActual = new Date();
+  // 
+  // // Formatear las fechas en formato ISO 8601
+  // const fechaActualISO = fechaActual.toISOString();
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActualISO);
+  // 
+  // console.log(pm.environment.get("totalKm"))
+  // postman.setEnvironmentVariable("totalKm", parseInt(pm.environment.get("totalKm"))+1);
+  // 
+  // 
+}
+
+tests {
+  // pm.test("Successful POST request", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([201, 202]);
+  // });
+  // 
+  // pm.test("The response contains the expected elements!", function () {
+  //     pm.response.to.not.be.error;
+  //     pm.response.to.have.jsonBody("id");
+  //     pm.response.to.have.jsonBody("origin");
+  //     pm.response.to.have.jsonBody("registrationDate");
+  //     pm.response.to.have.jsonBody("km");
+  //     pm.response.to.have.jsonBody("mi");
+  //     pm.response.to.have.jsonBody("vehicleId");
+  //     pm.response.to.have.jsonBody("createdByUserId");
+  //     pm.response.to.have.jsonBody("accountId");
+  //     pm.response.to.have.jsonBody("createdAt");
+  //     pm.response.to.have.jsonBody("updatedAt");
+  //     pm.response.to.not.have.jsonBody("error");
+  // });
+  // 
+  // pm.test("The response contains the expected element types!", () => {
+  //     pm.expect(jsonData.id).to.be.an("number");
+  //     pm.expect(jsonData.origin).to.be.an("string")
+  //     pm.expect(jsonData.accountId).to.be.an("number")
+  //     pm.expect(jsonData.registrationDate).to.be.an("stirng")
+  //     pm.expect(jsonData.hrs).to.be.an("string")
+  //     pm.expect(jsonData.km).to.be.an("number")
+  //     pm.expect(jsonData.mi).to.be.an("string")
+  //     pm.expect(jsonData.vehicleId).to.be.an("number")
+  //     pm.expect(jsonData.createdByUserId).to.be.an("number")
+  //     pm.expect(jsonData.createAt).to.be.an("number")
+  //     pm.expect(jsonData.updateAt).to.be.an("number")
+  // });
+  // 
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("OdometerId", jsonData.id);
+  // console.log(jsonData.id)
+}

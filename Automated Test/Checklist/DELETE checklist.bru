@@ -1,0 +1,25 @@
+meta {
+  name: DELETE checklist
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{host}}/api/v1/checklists/{{checklistId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Deleted Checklist!", function () {
+  //     pm.response.to.have.status(204);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

@@ -1,0 +1,51 @@
+meta {
+  name: GET All Users Management
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/management/users?skip=0&take=20&orderBy=name&orderType=ASC
+  body: none
+  auth: none
+}
+
+query {
+  skip: 0
+  take: 20
+  orderBy: name
+  orderType: ASC
+  ~ignoreLimits: 0
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get All Users Fleet!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("userIdManagementTest", jsonData.list[0].id);
+  // //postman.setEnvironmentVariable("vehicleName", jsonData.name);
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData.list).to.be.an("array")
+  //   pm.expect(jsonData.list[0].id).to.be.an("number");
+  //   pm.expect(jsonData.list[0].name).to.be.a("string");
+  //   pm.expect(jsonData.list[0].email).to.be.a("string");
+  //   pm.expect(jsonData.list[0].legacyCode).to.be.a("null");
+  //   pm.expect(jsonData.list[0].userType).to.be.an("string");
+  //   pm.expect(jsonData.list[0].userStatus).to.be.a("string");
+  //   pm.expect(jsonData.list[0].createdAt).to.be.a("string");
+  //   //pm.expect(jsonData.list[0].updatedAt).to.be.a("null");
+  //   pm.expect(jsonData.list[0].services).to.be.a("array");
+  // 
+  //   });
+}

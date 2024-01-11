@@ -1,0 +1,98 @@
+meta {
+  name: POST Vehicle
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/api/v1/vehicles
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  { 
+      "brandId":{{vehicleBrandId}},
+      "circulationPermit":"pstm-{{randomNumber}}{{$randomAlphaNumeric}}{{randomNumber}}",
+      "color": "{{$randomColor}}",
+      "customFieldsData":{},
+      "fuelTypeId":{{fuelTypeId}},
+      "model": "Automation API",
+      "name": "Test API {{randomNumber}}",
+      "primaryTankCapacity":50,
+      "city": "{{$randomCity}}",
+      "propertyTypeId": {{vehiclePropertieId}},
+      "registrationNumber":"pstm-{{randomNumber}}{{$randomAlphaNumeric}}{{randomNumber}}",
+      "segments":[],
+      "serialNumber": "pstm-{{randomNumber}}{{$randomAlphaNumeric}}{{randomNumber}}",
+      "tags":[],
+      "vehicleStatusId": {{vehicleStatusId}},
+      "vehicleTypeId": {{vehicleTypeId}},
+      "year": "2023"
+  }
+}
+
+script:pre-request {
+  // var random = Math.floor(Math.random() * 1000000);
+  // postman.setEnvironmentVariable("randomNumber", random);
+}
+
+tests {
+  // pm.test("Status code is 201", function () {
+  //     pm.response.to.have.status(201);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("vehicleIdTest", jsonData.id);
+  // postman.setEnvironmentVariable("vehicleName", jsonData.name);
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData.name).to.be.an("string");
+  //   pm.expect(jsonData.circulationPermit).to.be.a("string");
+  //   pm.expect(jsonData.model).to.be.a("string");
+  //   pm.expect(jsonData.year).to.be.a("string");
+  //   pm.expect(jsonData.color).to.be.a("string");
+  //   pm.expect(jsonData.city).to.be.a("string");
+  //   pm.expect(jsonData.primaryTankCapacity).to.be.a("number");
+  //   pm.expect(jsonData.customFieldsData).to.be.a("object");
+  //   pm.expect(jsonData.segments).to.be.an("array");
+  //   pm.expect(jsonData.tags).to.be.a("array");
+  //   pm.expect(jsonData.archivedAt).to.be.a("null");
+  //   pm.expect(jsonData.imageUrl).to.be.a("null");
+  //   pm.expect(jsonData.imageMinUrl).to.be.a("null");
+  //   pm.expect(jsonData.vehicleTanks).to.be.a("null");
+  //   pm.expect(jsonData.tanksCapacity).to.be.a("null");
+  //   pm.expect(jsonData.latitude).to.be.a("null");
+  //   pm.expect(jsonData.longitude).to.be.a("null");
+  //   pm.expect(jsonData.locationDatetime).to.be.a("null");
+  //   pm.expect(jsonData.locationOrigin).to.be.a("null");
+  //   pm.expect(jsonData.locationOriginId).to.be.a("null");
+  //   pm.expect(jsonData.id).to.be.an("number");
+  //   pm.expect(jsonData.createAt).to.be.a("string");
+  //   pm.expect(jsonData.updateAt).to.be.a("string");
+  //   pm.expect(jsonData.deleted).to.be.a("boolean");
+  //   pm.expect(jsonData.archived).to.be.a("boolean");
+  //   pm.expect(jsonData.documents).to.be.a("array");
+  //   pm.expect(jsonData.artifactAssignedIds).to.be.a("array");
+  //   pm.expect(jsonData.fuelType).to.be.a("object");
+  //   pm.expect(jsonData.vehicleStatus).to.be.a("object");
+  //   pm.expect(jsonData.vehicleType).to.be.a("object");
+  //   pm.expect(jsonData.createdByUser).to.be.a("object");
+  //   pm.expect(jsonData.updatedByUser).to.be.a("object");
+  //   pm.expect(jsonData.propertyType).to.be.a("object");
+  //   pm.expect(jsonData.brand).to.be.a("object");
+  //   pm.expect(jsonData.truck).to.be.a("object");
+  //   pm.expect(jsonData.remindersToSave).to.be.a("array");
+  //   pm.expect(jsonData.scheduledExpensesToSave).to.be.a("array");
+  //   pm.expect(jsonData.expenseToSave).to.be.a("array");
+  // 
+  //   });
+}

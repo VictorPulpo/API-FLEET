@@ -1,0 +1,19 @@
+meta {
+  name: Current
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://eu1.getpulpo.com/management/users/current
+  body: none
+  auth: bearer
+}
+
+headers {
+  ~external-authorization: {{auth_token}}
+}
+
+auth:bearer {
+  token: {{access_token}}
+}

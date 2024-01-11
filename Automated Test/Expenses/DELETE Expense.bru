@@ -1,0 +1,25 @@
+meta {
+  name: DELETE Expense
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{host}}/api/v1/expenses/{{expenseId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Deleted expense!", function () {
+  //     pm.response.to.have.status(204);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

@@ -1,0 +1,40 @@
+meta {
+  name: GET Expenses Types
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/api/v1/catalogs/expenses-types
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get expenses types!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("expenseTypeId", jsonData[2]["id"]);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData[0].id).to.be.an("number");
+  //   pm.expect(jsonData[0].name).to.be.a("string");
+  //   pm.expect(jsonData[0].isActive).to.be.a("boolean");
+  //   pm.expect(jsonData[0].isGlobal).to.be.a("boolean");
+  //   pm.expect(jsonData[0].catalogType).to.be.a("number");
+  //   pm.expect(jsonData[0].isRequired).to.be.a("boolean");
+  //   pm.expect(jsonData[0].canonicalName).to.be.a("string");
+  //   pm.expect(jsonData[0].customProperties).to.be.a("null");
+  //   pm.expect(jsonData[0].supplierTypeChilds).to.be.a("array");
+  // });
+}

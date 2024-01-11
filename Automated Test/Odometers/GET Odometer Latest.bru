@@ -1,0 +1,43 @@
+meta {
+  name: GET Odometer Latest
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{host}}/api/v1/odometers/latest?vehicleId={{vehicleId}}
+  body: none
+  auth: none
+}
+
+query {
+  vehicleId: {{vehicleId}}
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+script:pre-request {
+  // 
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Response is correct", function () {
+  //     pm.response.to.have.jsonBody("origin");
+  //     pm.response.to.have.jsonBody("registrationDate");
+  //     pm.response.to.have.jsonBody("km");
+  //     pm.response.to.have.jsonBody("vehicleId");
+  //     pm.response.to.have.jsonBody("accountId");
+  //     pm.response.to.have.jsonBody("updatedAt");
+  //     pm.response.to.have.jsonBody("createdAt");
+  //     pm.response.to.have.jsonBody("id");
+  //     pm.response.to.have.jsonBody("mi");
+  //     
+  // });
+  // 
+}

@@ -1,0 +1,62 @@
+meta {
+  name: POST Expense Type
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/api/v1/catalogs/expenses-types
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+   "description": "API Automation {{randomNumber}}",
+  "languageEng": "API Automation {{randomNumber}}",
+  "languageEs": "API Automation {{randomNumber}}",
+  "languageEsEs": "API Automation {{randomNumber}}",
+  "name": "API Automation {{randomNumber}}"
+  }
+}
+
+script:pre-request {
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Created Expense Type!", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([201, 202]);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("expenseTypeId", jsonData.id);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData.languageEs).to.be.an("string");
+  //   pm.expect(jsonData.languageEsEs).to.be.a("string");
+  //   pm.expect(jsonData.languageEng).to.be.a("string");
+  //   pm.expect(jsonData.name).to.be.a("string");
+  //   pm.expect(jsonData.description).to.be.a("string");
+  //   pm.expect(jsonData.externalCode).to.be.a("null");
+  //   pm.expect(jsonData.legacyCode).to.be.a("null");
+  //   pm.expect(jsonData.referenceCode).to.be.a("null");
+  //   pm.expect(jsonData.customProperties).to.be.a("null");
+  //   pm.expect(jsonData.id).to.be.a("number");
+  //   pm.expect(jsonData.createAt).to.be.a("string");
+  //   pm.expect(jsonData.updateAt).to.be.a("string");
+  //   pm.expect(jsonData.isActive).to.be.a("boolean");
+  //   pm.expect(jsonData.isRequired).to.be.a("boolean");
+  // 
+  // });
+}

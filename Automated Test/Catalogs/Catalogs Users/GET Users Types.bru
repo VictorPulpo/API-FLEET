@@ -1,0 +1,36 @@
+meta {
+  name: GET Users Types
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}/management/catalogs/users-types
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Users Types!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("userTypeId", jsonData[2]["id"]);
+  // postman.setEnvironmentVariable("userTypeName", jsonData[2]["name"]);
+  // 
+  // pm.test("Time response", function () {
+  //  pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData[0].id).to.be.an("number");
+  //   pm.expect(jsonData[0].name).to.be.a("string");
+  //   pm.expect(jsonData[0].canonicalName).to.be.a("string");
+  //   pm.expect(jsonData[0].isActive).to.be.a("boolean");
+  // });
+}

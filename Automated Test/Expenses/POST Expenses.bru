@@ -1,0 +1,121 @@
+meta {
+  name: POST Expenses
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/api/v1/expenses
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+    "name": "TEST API {{randomNumber}}{{$randomPrice}}",
+    "expenseTypeId": {{expenseTypeId}},
+    "subtotal": 100,
+    "taxType": "CURRENCY",
+    "tax": 0,
+    "discountType": "CURRENCY",
+    "discount": 0,
+    "total": 100,
+    "date": "{{fechaActual}}",
+    "driverId": {{driverId}},
+    "vehicleId": {{vehicleId}},
+    "paymentMethodId": {{paymentMethodId}},
+    "supplierId": {{supplierId}},
+    "locationId": 0,
+    "scheduledExpenseId": 0,
+    "scheduledCreationOrder": 0,
+    "documents": [],
+    "comments": [],
+    "segments": [
+    ],
+    "customFieldsMetadata": {},
+    "odometer": 0,
+    "tags": [
+    ]
+  }
+}
+
+script:pre-request {
+  // // Obtener la fecha y hora actual en UTC
+  // const fechaActual = new Date();
+  // 
+  // // Crear una copia de la fecha actual y agregar un día
+  // const fechaMayor = new Date(fechaActual);
+  // fechaMayor.setUTCDate(fechaMayor.getUTCDate() + 1);
+  // 
+  // // Formatear las fechas en formato ISO 8601
+  // const fechaActualISO = fechaActual.toISOString();
+  // const fechaMayorISO = fechaMayor.toISOString();
+  // 
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActualISO);
+  // 
+  // postman.setEnvironmentVariable("fechaFin", fechaMayorISO)
+  // 
+  // 
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Created expense!", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([201, 202]);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("expenseId", jsonData.id);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.odometer).to.be.an("number");
+  //     pm.expect(jsonData.customFieldsMetadata).to.be.an("object");
+  //     pm.expect(jsonData.name).to.be.an("string");
+  //     pm.expect(jsonData.subtotal).to.be.an("number");
+  //     pm.expect(jsonData.taxType).to.be.an("string");
+  //     pm.expect(jsonData.tax).to.be.an("number");
+  //     pm.expect(jsonData.calculatedTax).to.be.an("number");
+  //     pm.expect(jsonData.discountType).to.be.an("string");
+  //     pm.expect(jsonData.discount).to.be.an("number");
+  //     pm.expect(jsonData.calculatedDiscount).to.be.an("number");
+  //     pm.expect(jsonData.total).to.be.an("number");
+  //     pm.expect(jsonData.date).to.be.an("string");
+  //     pm.expect(jsonData.account).to.be.an("object");
+  //     pm.expect(jsonData.filterDate).to.be.an("string");
+  //     pm.expect(jsonData.odometerId).to.be.an("null");
+  //     pm.expect(jsonData.tags).to.be.an("array");
+  //     pm.expect(jsonData.segments).to.be.an("array");
+  //     pm.expect(jsonData.extras).to.be.an("null");
+  //     pm.expect(jsonData.country).to.be.an("null");
+  //     pm.expect(jsonData.legacyId).to.be.an("null");
+  //     pm.expect(jsonData.id).to.be.an("number");
+  //     pm.expect(jsonData.createAt).to.be.an("string");
+  //     pm.expect(jsonData.updateAt).to.be.an("string");
+  //     pm.expect(jsonData.isActive).to.be.an("boolean");
+  //     pm.expect(jsonData.settled).to.be.an("boolean");
+  //     pm.expect(jsonData.origin).to.be.an("string");
+  //     pm.expect(jsonData.createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.expenseType).to.be.an("string");
+  //     pm.expect(jsonData.user).to.be.an("string");
+  //     pm.expect(jsonData.vehicle).to.be.an("string");
+  //     pm.expect(jsonData.vehicleId).to.be.an("number");
+  //     pm.expect(jsonData.paymentMethod).to.be.an("string");
+  //     pm.expect(jsonData.supplier).to.be.an("string");
+  //     pm.expect(jsonData.location).to.be.an("null");
+  //     pm.expect(jsonData.scheduledExpense).to.be.an("null");
+  //     pm.expect(jsonData.dateISO).to.be.an("string");
+  //     pm.expect(jsonData.currentCurrency).to.be.an("string");
+  //     
+  // });
+}

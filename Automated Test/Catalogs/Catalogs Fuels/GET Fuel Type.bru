@@ -1,0 +1,35 @@
+meta {
+  name: GET Fuel Type
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/api/v1/fuel-types
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("fuelTypeId", jsonData[0]["id"]);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData[0].id).to.be.an("number");
+  //   pm.expect(jsonData[0].name).to.be.a("string");
+  //   pm.expect(jsonData[0].supplierTypeChilds).to.be.a("array");
+  //   
+  // });
+}

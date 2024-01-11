@@ -1,0 +1,42 @@
+meta {
+  name: POST Fuel Export
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{host}}/api/v1/fuels/export
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  [
+    "string"
+  ]
+}
+
+tests {
+  // pm.test("Successful POST request", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([201, 202]);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.buffer).to.be.an("object");
+  //     pm.expect(jsonData.buffer["type"]).to.be.an("string");
+  //     pm.expect(jsonData.buffer["data"]).to.be.an("array");
+  //     pm.expect(jsonData.type).to.be.an("string");
+  //     pm.expect(jsonData.extension).to.be.an("string");
+  //     
+  //   });
+  // 
+}

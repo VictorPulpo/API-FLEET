@@ -1,0 +1,47 @@
+meta {
+  name: UPDATE Vehicle
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{host}}/api/v1/vehicles/{{vehicleIdTest}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  { 
+      "brandId":{{vehicleBrandId}},
+      "circulationPermit":"pstm{{randomNumber}}",
+      "color": "Negro",
+      "customFieldsData":{},
+      "fuelTypeId":{{fuelTypeId}},
+      "model": "Automation API",
+      "name": "Test API {{randomNumber}}",
+      "primaryTankCapacity":20,
+      "city": "Mexico",
+      "propertyTypeId": {{vehiclePropertieId}},
+      "registrationNumber":"pstm-{{randomNumber}}{{$randomAlphaNumeric}}{{randomNumber}}",
+      "segments":[],
+      "serialNumber": "pstm-{{randomNumber}}{{$randomAlphaNumeric}}{{randomNumber}}",
+      "tags":[],
+      "vehicleStatusId":{{vehicleStatusId}},
+      "vehicleTypeId": {{vehicleTypeId}},
+      "year": "2023"
+  }
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

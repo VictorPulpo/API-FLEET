@@ -1,0 +1,46 @@
+meta {
+  name: GET Odometer History
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}/api/v1/odometers/history?vehicleId={{vehicleId}}
+  body: none
+  auth: none
+}
+
+query {
+  vehicleId: {{vehicleId}}
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // 
+  // pm.test("The response contains the expected element types!", function () {
+  //    pm.expect(jsonData.history[0].origin).to.be.an("string");
+  //    pm.expect(jsonData.history[0].km).to.be.an("string");
+  //    pm.expect(jsonData.history[0].vehicleId).to.be.an("number");
+  //    pm.expect(jsonData.history[0].accountId).to.be.an("number");
+  //    pm.expect(jsonData.history[0].updatedAt).to.be.an("string");
+  //    pm.expect(jsonData.history[0].createdAt).to.be.an("string");
+  //    pm.expect(jsonData.history[0].hrs).to.be.an("string");
+  //    pm.expect(jsonData.history[0].id).to.be.an("string");
+  //    pm.expect(jsonData.history[0].mi).to.be.an("number");
+  //    pm.expect(jsonData.history[0].registrationDate).to.be.an("string");
+  //    pm.expect(jsonData.history[0].registrationTime).to.be.an("string");
+  //    pm.expect(jsonData.history[0].createdBy).to.be.an("object");
+  //    pm.expect(jsonData.history[0].createdBy.id).to.be.an("number");
+  //    pm.expect(jsonData.history[0].createdBy.name).to.be.an("string");
+  //    pm.expect(jsonData._metadata).to.be.an("object");
+  //    pm.expect(jsonData._metadata._total_rows).to.be.an("number");
+  // });
+}

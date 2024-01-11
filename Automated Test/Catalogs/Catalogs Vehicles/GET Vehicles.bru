@@ -1,0 +1,39 @@
+meta {
+  name: GET Vehicles
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{host}}/api/v1/vehicles/catalog
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Catalog Vehicles!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = pm.response.json();
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("body is correct", () => {
+  //     pm.expect(jsonData[0].id).to.be.an("number");
+  //     pm.expect(jsonData[0].name).to.be.an("string");
+  //     
+  // });
+  // 
+  // 
+  // 
+  // 
+  // 
+  // 
+}

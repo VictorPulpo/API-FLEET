@@ -1,0 +1,85 @@
+meta {
+  name: GET Expenses
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/api/v1/expenses
+  body: none
+  auth: none
+}
+
+query {
+  ~searchText: 
+  ~orderType: ASC
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+script:pre-request {
+  // // Obtener la fecha y hora actual en UTC
+  // const fechaActual = new Date();
+  // 
+  // // Crear una copia de la fecha actual y agregar un día
+  // const fechaMayor = new Date(fechaActual);
+  // fechaMayor.setUTCDate(fechaMayor.getUTCDate() + 1);
+  // 
+  // // Formatear las fechas en formato ISO 8601
+  // const fechaActualISO = fechaActual.toISOString();
+  // const fechaMayorISO = fechaMayor.toISOString();
+  // 
+}
+
+tests {
+  // 
+  // pm.test("Get expenses!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.expenses).to.be.an("array");
+  //     pm.expect(jsonData.expenses[0].id).to.be.an("number");
+  //     pm.expect(jsonData.expenses[0].createAt).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].updateAt).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].date).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].name).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].taxType).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].discountType).to.be.an("string");
+  //    // pm.expect(jsonData.expenses[0].documents).to.be.an("array");
+  //    // pm.expect(jsonData.expenses[0].comments).to.be.an("array");
+  //    // pm.expect(jsonData.expenses[0].scheduledCreationOrder).to.be.an("number");
+  //     pm.expect(jsonData.expenses[0].tags).to.be.an("array");
+  //     pm.expect(jsonData.expenses[0].origin).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].country).to.be.an("null");
+  //    // pm.expect(jsonData.expenses[0].user).to.be.an("object");
+  //     //pm.expect(jsonData.expenses[0].vehicle).to.be.an("object");
+  //     pm.expect(jsonData.expenses[0].paymentMethod).to.be.an("object");
+  //     pm.expect(jsonData.expenses[0].supplier).to.be.an("object");
+  //     pm.expect(jsonData.expenses[0].location).to.be.an("null");
+  //     pm.expect(jsonData.expenses[0].scheduledExpense).to.be.an("null");
+  //     pm.expect(jsonData.expenses[0].keyMovement).to.be.an("null");
+  //     pm.expect(jsonData.expenses[0].tax).to.be.an("number");
+  //     pm.expect(jsonData.expenses[0].calculatedTax).to.be.an("number");
+  //     pm.expect(jsonData.expenses[0].discount).to.be.an("number");
+  //     pm.expect(jsonData.expenses[0].calculatedDiscount).to.be.an("number");
+  //     pm.expect(jsonData.expenses[0].total).to.be.an("number");
+  //     pm.expect(jsonData.expenses[0].createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.expenses[0].updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.expenses[0].segments).to.be.an("array");
+  //     pm.expect(jsonData.expenses[0].expenseType).to.be.an("object");
+  //     pm.expect(jsonData.expenses[0].dateISO).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].currentCurrency).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].currentCurrencySymbolPosition).to.be.an("string");
+  //     pm.expect(jsonData.expenses[0].expenseComments).to.be.an("array");
+  //     pm.expect(jsonData.expenses[0].expenseDocuments).to.be.an("array");
+  //     
+  // });
+}

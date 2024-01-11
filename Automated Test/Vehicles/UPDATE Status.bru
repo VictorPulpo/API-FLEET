@@ -1,0 +1,32 @@
+meta {
+  name: UPDATE Status
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{host}}/api/v1/vehicles/status/{{vehicleIdTest}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+      "vehicleStatusId":{{vehicleStatusId}},
+      "reason": "Test API update status" 
+      }
+}
+
+tests {
+  // pm.test("Status code is 200", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

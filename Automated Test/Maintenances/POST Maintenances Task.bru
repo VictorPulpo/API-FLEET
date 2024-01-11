@@ -1,0 +1,85 @@
+meta {
+  name: POST Maintenances Task
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{host}}/api/v1/maintenances/{{maintenanceId}}/tasks
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+      "products": [],
+      "status": "ACTIVE",
+      "summary": {
+          "total": 0,
+          "workforce": 0
+      },
+      "type": "14b0e666-0cd4-4543-a7aa-921870226081"
+  }
+}
+
+script:pre-request {
+  // // Obtener la fecha y hora actual en UTC
+  // const fechaActual = new Date();
+  // 
+  // // Crear una copia de la fecha actual y agregar un día
+  // const fechaMayor = new Date(fechaActual);
+  // fechaMayor.setUTCDate(fechaMayor.getUTCDate() + 1);
+  // 
+  // // Formatear las fechas en formato ISO 8601
+  // const fechaActualISO = fechaActual.toISOString();
+  // const fechaMayorISO = fechaMayor.toISOString();
+  // 
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActualISO);
+  // postman.setEnvironmentVariable("fechaMayor", fechaMayorISO);
+  // 
+  // 
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Created Maintenance!", function () {
+  //     pm.response.to.have.status(201);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("maintenanceId", jsonData.id);
+  // postman.setEnvironmentVariable("taskId", jsonData.tasks[0].id);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.identifier).to.be.an("string");
+  //     pm.expect(jsonData.id).to.be.an("string");
+  //     pm.expect(jsonData.status).to.be.an("string");
+  //     pm.expect(jsonData.type).to.be.an("string");
+  //     pm.expect(jsonData.name).to.be.an("string");
+  //     pm.expect(jsonData.vehicle).to.be.an("object");
+  //     pm.expect(jsonData.tasks).to.be.an("array");
+  //     pm.expect(jsonData.tax).to.be.an("number");
+  //     pm.expect(jsonData.scheduledDate).to.be.an("string");
+  //     pm.expect(jsonData.discount).to.be.an("number");
+  //     pm.expect(jsonData.stateUpdated).to.be.an("boolean");
+  //     pm.expect(jsonData.state).to.be.an("object");
+  //     pm.expect(jsonData.notifications).to.be.an("object");
+  //     pm.expect(jsonData.metadata).to.be.an("object");
+  //     pm.expect(jsonData.tags).to.be.an("array");
+  //     pm.expect(jsonData.startDate).to.be.an("string");
+  //     pm.expect(jsonData.lastStatusDate).to.be.an("number");
+  //    // pm.expect(jsonData.estimatedDeliveryDate).to.be.an("string");
+  //     pm.expect(jsonData.associatedDrivers).to.be.an("array");
+  //     
+  // });
+}

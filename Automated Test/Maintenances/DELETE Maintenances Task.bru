@@ -1,0 +1,43 @@
+meta {
+  name: DELETE Maintenances Task
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{host}}/api/v1/maintenances/{{maintenanceId}}/tasks/{{taskId}}
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+script:pre-request {
+  // // Obtener la fecha y hora actual en UTC
+  // const fechaActual = new Date();
+  // 
+  // // Crear una copia de la fecha actual y agregar un día
+  // const fechaMayor = new Date(fechaActual);
+  // fechaMayor.setUTCDate(fechaMayor.getUTCDate() + 1);
+  // 
+  // // Formatear las fechas en formato ISO 8601
+  // const fechaActualISO = fechaActual.toISOString();
+  // const fechaMayorISO = fechaMayor.toISOString();
+  // 
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActualISO);
+  // postman.setEnvironmentVariable("fechaMayor", fechaMayorISO);
+  // 
+  // 
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Deleted Task!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+}

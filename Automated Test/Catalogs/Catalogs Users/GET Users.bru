@@ -1,0 +1,43 @@
+meta {
+  name: GET Users
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{host}}/api/v1/users/catalog
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Users!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("userId", jsonData[0]["id"]);
+  // postman.setEnvironmentVariable("driverId", jsonData[5]["id"]);
+  // 
+  //  const index = jsonData.findIndex(objeto => objeto.isDriver === false);
+  // 
+  //   if (index !== -1) {
+  //     postman.setEnvironmentVariable("responsibleId", jsonData[index].id);
+  //   } else {
+  //     console.log('No se encontró ningún objeto con isDriver igual a false.');
+  //   }
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData[0].id).to.be.an("number");
+  //   pm.expect(jsonData[0].name).to.be.a("string");
+  //   pm.expect(jsonData[0].isDriver).to.be.a("boolean");
+  // });
+}

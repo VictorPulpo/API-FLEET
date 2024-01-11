@@ -1,0 +1,37 @@
+meta {
+  name: GET Licence Types
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/api/v1/license-type
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Licences Types!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("licenseTypeId", jsonData[0]["id"]);
+  // postman.setEnvironmentVariable("licenseTypeName", jsonData[0]["name"]);
+  // 
+  // pm.test("Body is correct", () => {
+  //   pm.expect(jsonData[0].id).to.be.an("number");
+  //   pm.expect(jsonData[0].name).to.be.a("string");
+  //   pm.expect(jsonData[0].supplierTypeChilds).to.be.a("array");
+  // });
+  // 
+  // 
+}

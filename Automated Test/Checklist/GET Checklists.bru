@@ -1,0 +1,41 @@
+meta {
+  name: GET Checklists
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/api/v1/checklists
+  body: none
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get Checklist!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  // //    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData[0].id).to.be.an("string");
+  //     pm.expect(jsonData[0].name).to.be.an("string");
+  //     pm.expect(jsonData[0].description).to.be.an("null");
+  //     pm.expect(jsonData[0].status).to.be.an("string");
+  //     pm.expect(jsonData[0].sections).to.be.an("array");
+  //     //pm.expect(jsonData.sections[0].id).to.be.an("string");
+  //     //pm.expect(jsonData.sections[0].name).to.be.an("string");
+  //     //pm.expect(jsonData.sections[0].position).to.be.an("number");
+  //     //pm.expect(jsonData.sections[0].status).to.be.an("string");
+  //    // pm.expect(jsonData.sections[0].checklistId).to.be.an("string");
+  //    // pm.expect(jsonData.sections[0].fields).to.be.an("array");
+  //   
+  // });
+}

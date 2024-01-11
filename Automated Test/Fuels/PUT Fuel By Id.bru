@@ -1,0 +1,68 @@
+meta {
+  name: PUT Fuel By Id
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{host}}/api/v1/fuels/{{fuelId}}
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:form-urlencoded {
+  customFieldsMetadata: %7B%7D
+  volume: 2
+  pricePerUnit: 2
+  tax: 0
+  taxType: PERCENTAGE
+  discountType: PERCENTAGE
+  discount: 0
+  total: 4
+  date: 2023-07-26T19%3A08%3A00.000Z
+  fuelTypeId: %7B%7BfuelTypeId%7D%7D
+  vehicleId: %7B%7BvehicleId%7D%7D
+  driverId: %7B%7BdriverId%7D%7D
+  supplierId: %7B%7BsupplierId%7D%7D
+  reference: Test%20API
+  paymentMethodId: %7B%7BpaymentMethodId%7D%7D
+  tags: %5B%5D
+  segments: %5B%5D
+  ~locationId: 
+  ~odometer: 19
+}
+
+script:pre-request {
+  // const date = new Date();
+  // const year = date.getFullYear()
+  // const month = date.getMonth()
+  // const day = date.getUTCDate()
+  // const hour = date.getHours()-1
+  // const minutes = date.getMinutes()
+  // const seconds = date.getSeconds()
+  // 
+  // 
+  // const dateUTC = new Date(Date.UTC(year, month, day, hour, minutes, 0));
+  // 
+  // const fechaActual = dateUTC.toISOString()
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActual);
+  // 
+  // 
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Successful Update fuel", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([200]);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+}

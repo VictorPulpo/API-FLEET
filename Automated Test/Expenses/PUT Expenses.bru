@@ -1,0 +1,114 @@
+meta {
+  name: PUT Expenses
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{host}}/api/v1/expenses/{{expenseId}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+    "name": "TEST API {{randomNumber}}{{$randomPrice}}",
+    "expenseTypeId": {{expenseTypeId}},
+    "subtotal": 100,
+    "taxType": "CURRENCY",
+    "tax": 0,
+    "discountType": "CURRENCY",
+    "discount": 0,
+    "total": 100,
+    "date": "{{fechaActual}}",
+    "driverId": {{driverId}},
+    "vehicleId": {{vehicleId}},
+    "paymentMethodId": {{paymentMethodId}},
+    "supplierId": {{supplierId}},
+    "locationId": 0,
+    "scheduledExpenseId": 0,
+    "scheduledCreationOrder": 0,
+    "documents": [],
+    "comments": [],
+    "segments": [
+    ],
+    "customFieldsMetadata": {},
+    "tags": [
+    ]
+  }
+}
+
+script:pre-request {
+  // const date = new Date();
+  // const year = date.getFullYear()
+  // const month = date.getMonth()
+  // const day = date.getUTCDate()
+  // const hour = date.getHours()-1
+  // const minutes = date.getMinutes()
+  // const seconds = date.getSeconds()
+  // 
+  // 
+  // const dateUTC = new Date(Date.UTC(year, month, day, hour, minutes, 0));
+  // 
+  // const fechaActual = dateUTC.toISOString()
+  // 
+  // postman.setEnvironmentVariable("fechaActual", fechaActual);
+  // 
+  // 
+  // var randomNumber = Math.floor(Math.random()*10)
+  // postman.setEnvironmentVariable("randomNumber", randomNumber);
+}
+
+tests {
+  // pm.test("Updated expense!", function () {
+  //     pm.expect(pm.response.code).to.be.oneOf([201, 202, 200]);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.id).to.be.an("number");
+  //     pm.expect(jsonData.createAt).to.be.an("string");
+  //     pm.expect(jsonData.updateAt).to.be.an("string");
+  //     pm.expect(jsonData.date).to.be.an("string");
+  //     pm.expect(jsonData.name).to.be.an("string");
+  //     pm.expect(jsonData.taxType).to.be.an("string");
+  //     pm.expect(jsonData.tax).to.be.an("number");
+  //     pm.expect(jsonData.calculatedTax).to.be.an("number");
+  //     pm.expect(jsonData.discountType).to.be.an("string");
+  //     pm.expect(jsonData.discount).to.be.an("number");
+  //     pm.expect(jsonData.calculatedDiscount).to.be.an("number");
+  //     pm.expect(jsonData.subtotal).to.be.an("number");
+  //     pm.expect(jsonData.total).to.be.an("number");
+  //     pm.expect(jsonData.documents).to.be.an("array");
+  //     pm.expect(jsonData.comments).to.be.an("array");
+  //     pm.expect(jsonData.segments).to.be.an("array");
+  //     pm.expect(jsonData.scheduledCreationOrder).to.be.an("number");
+  //     pm.expect(jsonData.customFieldsMetadata).to.be.an("object");
+  //     pm.expect(jsonData.odometerId).to.be.an("null");
+  //     pm.expect(jsonData.tags).to.be.an("array");
+  //     pm.expect(jsonData.origin).to.be.an("string");
+  //     pm.expect(jsonData.country).to.be.an("null");
+  //     pm.expect(jsonData.expenseType).to.be.an("object");
+  //     pm.expect(jsonData.createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.user).to.be.an("object");
+  //     pm.expect(jsonData.vehicle).to.be.an("object");
+  //     pm.expect(jsonData.paymentMethod).to.be.an("object");
+  //     pm.expect(jsonData.supplier).to.be.an("object");
+  //     pm.expect(jsonData.location).to.be.an("null");
+  //     pm.expect(jsonData.scheduledExpense).to.be.an("null");
+  //     pm.expect(jsonData.keyMovement).to.be.an("null");
+  //     pm.expect(jsonData.filterDate).to.be.an("string");
+  //     pm.expect(jsonData.dateISO).to.be.an("string");
+  //     pm.expect(jsonData.currentCurrency).to.be.an("string");
+  //     
+  // });
+}

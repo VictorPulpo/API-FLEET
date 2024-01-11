@@ -1,0 +1,51 @@
+meta {
+  name: POST New User
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{host}}/management/users/
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+    "customFieldsData": {},
+    "denyLogin":false,
+    "email": "testapi_{{randomNumber}}{{$randomAlphaNumeric}}@test.com",
+    "licenseNumber": "{{$randomAlphaNumeric}}{{randomNumber}}",
+    "isPermanentLicense": true,
+    "licenseType": {"id":{{licenseTypeId}},"name":"{{licenseTypeName}}", "supplierTypeChilds":[]},
+    "name": "testapi_{{randomNumber}}{{$randomAlphaNumeric}}",
+    "vehicleType": {"id":{{vehicleTypeId}},"name":"{{vehicleName}}", "supplierTypeChilds":[]},
+    "segments": [],
+    "services":[{"id": 1}],
+    "tags":[],
+    "userStatusId": {{userStatusId}},
+    "userTypeId": {{userTypeId}}
+    }
+}
+
+script:pre-request {
+  // 
+}
+
+tests {
+  // pm.test("Created User!", function () {
+  //     pm.response.to.have.status(201);
+  // });
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("userIdManagement", jsonData.id);
+  // postman.setEnvironmentVariable("userId", jsonData.fleetsUserId);
+}

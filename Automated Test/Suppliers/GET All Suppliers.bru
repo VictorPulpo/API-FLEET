@@ -1,0 +1,65 @@
+meta {
+  name: GET All Suppliers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/api/v1/suppliers?collectionType=supplier
+  body: multipartForm
+  auth: none
+}
+
+query {
+  collectionType: supplier
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+tests {
+  // pm.test("Get All Suppliers!", function () {
+  //     pm.response.to.have.status(200);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("supplierId", jsonData.suppliers[0].id);
+  // 
+  // pm.test("Time response", function () {
+  //    // pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  //         pm.expect(pm.response.responseTime).to.be.below(3000);
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.suppliers).to.be.an("array");
+  //     pm.expect(jsonData.suppliers[0].name).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].description).to.be.an("null");
+  //     pm.expect(jsonData.suppliers[0].address).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].state).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].zipCode).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].country).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].city).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].webPage).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].phoneNumber).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].commercialName).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].fiscalCode).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].fiscalAddress).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].commercialEmail).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].comments).to.be.an("null");
+  //     pm.expect(jsonData.suppliers[0].createAt).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].updateAt).to.be.an("string");
+  //     pm.expect(jsonData.suppliers[0].tags).to.be.an("array");
+  //     pm.expect(jsonData.suppliers[0].documents).to.be.an("number");
+  //     pm.expect(jsonData.suppliers[0].latitude).to.be.an("number");
+  //     pm.expect(jsonData.suppliers[0].longitude).to.be.an("number");
+  //     pm.expect(jsonData.suppliers[0].type).to.be.an("object");
+  //     pm.expect(jsonData.suppliers[0].createdByUser).to.be.an("object");
+  //     pm.expect(jsonData.suppliers[0].updatedByUser).to.be.an("object");
+  //     pm.expect(jsonData.suppliers[0].segments).to.be.an("array");
+  //     pm.expect(jsonData.suppliers[0].supplierComments).to.be.an("array");
+  //     pm.expect(jsonData.suppliers[0].supplierDocuments).to.be.an("array");
+  //        
+  //   });
+  // 
+}

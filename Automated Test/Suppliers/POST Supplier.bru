@@ -1,0 +1,79 @@
+meta {
+  name: POST Supplier
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/api/v1/suppliers
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+  "address": "Automation",
+  "city": "Postman",
+  "commercialEmail": "pstm.automation{{randomNumber}}@apitest.com",
+  "commercialName":"{{$randomCompanyName}}",
+  "country": "México",
+  "fiscalAddress": "Automation Postman {{randomNumber}}",
+  "fiscalCode": "{{$randomBankAccountBic}}",
+  "latitude": 19.7027116,
+  "longitude": -101.1923818,
+  "name": "{{$randomCompanyName}}",
+  "parentSupplierId": null,
+  "phoneNumber": "9531239440",
+  "segments": [],
+  "state": "Michoacán",
+  "supplierTypeId": {{supplierTypeId}},
+  "tags": [{"id": "7a5cd690-2ce7-434d-8809-82eaf6ea5f7c", "tag": "Etiqueta", "module": "suppliers"}],
+  "webPage": "{{$randomDomainName}}",
+  "zipCode": "58000"
+  }
+}
+
+tests {
+  // pm.test("Created Supplier!", function () {
+  //     pm.response.to.have.status(201);
+  // });
+  // 
+  // var jsonData = JSON.parse(responseBody);
+  // postman.setEnvironmentVariable("supplierIdTest", jsonData.id);
+  // 
+  // pm.test("Time response", function () {
+  //     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get("time")));
+  // });
+  // 
+  // pm.test("Body is correct", () => {
+  //     pm.expect(jsonData.name).to.be.a("string");
+  //     pm.expect(jsonData.address).to.be.a("string");
+  //     pm.expect(jsonData.state).to.be.a("string");
+  //     pm.expect(jsonData.zipCode).to.be.a("string");
+  //     pm.expect(jsonData.country).to.be.a("string");
+  //     pm.expect(jsonData.city).to.be.a("string");
+  //     pm.expect(jsonData.webPage).to.be.a("string");
+  //     pm.expect(jsonData.phoneNumber).to.be.a("string");
+  //     pm.expect(jsonData.commercialName).to.be.a("string");
+  //     pm.expect(jsonData.fiscalCode).to.be.a("string");
+  //     pm.expect(jsonData.fiscalAddress).to.be.a("string");
+  //     pm.expect(jsonData.commercialEmail).to.be.a("string");
+  //     pm.expect(jsonData.segments).to.be.a("array");
+  //     pm.expect(jsonData.tags).to.be.a("array");
+  //     pm.expect(jsonData.supplierType).to.be.a("object");
+  //     pm.expect(jsonData.createdByUser).to.be.a("object");
+  //      pm.expect(jsonData.updatedByUser).to.be.a("object");
+  //     pm.expect(jsonData.suppliersGroup).to.be.a("object");
+  //     pm.expect(jsonData.id).to.be.a("number");
+  //     pm.expect(jsonData.documents).to.be.a("array");
+  //     pm.expect(jsonData.createAt).to.be.a("string");
+  //     pm.expect(jsonData.updateAt).to.be.a("string");
+  //     pm.expect(jsonData.isActive).to.be.a("boolean");
+  //     pm.expect(jsonData.latitude).to.be.a("number");
+  //     pm.expect(jsonData.longitude).to.be.a("number");
+  // });
+}

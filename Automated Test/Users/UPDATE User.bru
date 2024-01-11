@@ -1,0 +1,34 @@
+meta {
+  name: UPDATE User
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{host}}/management/users/{{userIdManagement}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+    "customFieldsData": {},
+    "denyLogin":false,
+    "email": "testapi_up{{randomNumber}}{{$randomAlphaNumeric}}@test.com",
+    "licenseNumber": "{{$randomAlphaNumeric}}{{randomNumber}}",
+    "isPermanentLicense": true,
+    "licenseType": {"id":{{licenseTypeId}},"name":"{{licenseTypeName}}", "supplierTypeChilds":[]},
+    "name": "testapi_{{randomNumber}}{{$randomAlphaNumeric}}",
+    "vehicleType": {"id":{{vehicleTypeId}},"name":"{{vehicleName}}", "supplierTypeChilds":[]},
+    "segments": [],
+    "services":[{"id": 1}],
+    "tags":[],
+    "userStatusId": {{userStatusId}},
+    "userTypeId": {{userTypeId}}
+    }
+  
+}

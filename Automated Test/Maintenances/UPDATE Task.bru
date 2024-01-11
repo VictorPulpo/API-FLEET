@@ -1,0 +1,27 @@
+meta {
+  name: UPDATE Task
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{host}}/api/v1/maintenances/{{maintenanceId}}/tasks/{{taskId}}
+  body: json
+  auth: none
+}
+
+headers {
+  external-authorization: {{auth_token}}
+}
+
+body:json {
+  {
+      "products": [],
+      "summary": {
+          "total": 0,
+          "workforce": 0
+      },
+      "type": "14b0e666-0cd4-4543-a7aa-921870226081",
+      "description": "Hola2"
+  }
+}
